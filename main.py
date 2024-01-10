@@ -53,7 +53,7 @@ def Ica_score(user_id,test_id):
         try:
             test_data = collection_ica.find_one({'_id':test_id})['testData']
             test_time = collection_ica.find_one({'_id':test_id})['testTime']
-            speed_ica_text = round(min(100, 100 * (1 / math.exp((int(str(test_time).split('.')[0]) * 60 + int(str(test_time).split('.')[1])) / 1025))), 2)
+            speed_ica_text = round(min(100, 100 * (1 / math.exp((int(str(test_time).split('.')[0]) * 60 + int(str(test_time).split('.')[1])) / 1025))+0.341), 2)
             user_report['Speed']=speed_ica_text
             user_report['Accuracy']=ica_test(test_data)
             user_report['ICA_Index']=round((((user_report['Speed'])/100*(user_report['Accuracy'])/100)*100),2)
