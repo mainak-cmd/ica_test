@@ -48,7 +48,7 @@ def Ica_score(user_id,test_id):
         'Accuracy':0,
         'Speed':0,
         'ICA_Index':0,
-        'timestamp':datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f %z")
+        'timestamp':datetime.now().strftime("%Y-%m-%d %H:%M:%OS")
         }
         try:
             test_data = collection_ica.find_one({'_id':test_id})['testData']
